@@ -19,8 +19,8 @@ public class Player extends HPRender{
 
     public Player() {
         super(new HP(50, 50));
-        this.image = new ImageIcon(getClass().getResource("/src/Image/plane.png")).getImage();
-        this.image_accelerate = new ImageIcon(getClass().getResource("/src/Image/plane_accelerate.png")).getImage();
+        this.image = new ImageIcon(getClass().getResource("/Image/plane.png")).getImage();
+        this.image_accelerate = new ImageIcon(getClass().getResource("/Image/plane_accelerate.png")).getImage();
         Path2D p = new Path2D.Double();
         p.moveTo(0, 15);
         p.lineTo(20, 5);
@@ -35,6 +35,17 @@ public class Player extends HPRender{
         this.y = y;
     }
 
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public float getAngle() {
+        return angle;
+    }
     public void update() {
         x += Math.cos(Math.toRadians(angle))*speed;
         y += Math.sin(Math.toRadians(angle))*speed;
@@ -46,7 +57,7 @@ public class Player extends HPRender{
         } else if (angle < 359) {
             angle = 0;
         }
-        this.angle = angle
+        this.angle = angle;
     }
 
     public void draw(Graphics2D g2) {
@@ -64,5 +75,38 @@ public class Player extends HPRender{
         afx.translate(x, y);
         afx.rotate(Math.toRadians(angle), player_Size / 2, player_Size / 2);
         return new Area(afx.createTransformedShape(playerShape));
+    }
+
+    public void speedUp() {
+        speedUp = true;
+        if (speed > MAX_SPEED) {
+            speed = MAX_SPEED;
+        } else {
+            speed += 0.01f;
+        }
+    }
+
+    public void speedDown() {
+        speedUp = false;
+        if (speed <= 0) {
+            speed = 0;
+        } else {
+            speed -= 0.003f;
+        }
+    }
+
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+
+    public void reset() {
+        alive = true;
+        resetHP();
+        angle = 0;
+        speed = 0;
     }
 }
