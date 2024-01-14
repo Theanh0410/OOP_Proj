@@ -277,7 +277,7 @@ public class GamePanel extends JComponent {
                     boomEffs.add(new Effect(x, y, 10, 5, 100, 0.5f, new Color(255, 70, 70)));
                     boomEffs.add(new Effect(x, y, 10, 5, 150, 0.2f, new Color(255, 255, 255)));
                 }
-                if (!player.updateHP(rocketHp)) { //Player dead
+                if (!player.updateHP(rocketHp)) {
                     player.setAlive(false);
                     sound.soundDestroy();
                     double x = player.getX() + Player.player_Size / 2;

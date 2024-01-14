@@ -11,12 +11,12 @@ public class HPRender {
     }
 
     protected void hpRender(Graphics2D g2, Shape shape, double y) {
-        if (hp.getCurrentHP() != hp.getMAX_HP()) {
+        if (hp.getCurrentHP() != hp.getMax_HP()) {
             double hpY = shape.getBounds().getY() - y - 10;
             g2.setColor(new Color(70, 70, 70));
             g2.fill(new Rectangle2D.Double(0, hpY, Player.player_Size, 2));
             g2.setColor(new Color(253, 91, 91));
-            double hpSize = hp.getCurrentHP() / hp.getMAX_HP() * Player.player_Size;
+            double hpSize = hp.getCurrentHP() / hp.getMax_HP() * Player.player_Size;
             g2.fill(new Rectangle2D.Double(0, hpY, hpSize, 2));
         }
     }
@@ -31,6 +31,6 @@ public class HPRender {
     }
 
     public void resetHP() {
-        hp.setCurrentHP(hp.getMAX_HP());
+        hp.setCurrentHP(hp.getMax_HP());
     }
 }

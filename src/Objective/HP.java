@@ -1,26 +1,26 @@
 package Objective;
 
 public class HP {
-    private double MAX_HP;
-    private double currentHP;
+    private double max_HP;
+    private double current_HP;
 
-    public HP(double MAX_HP, double currentHP) {
-        this.MAX_HP = MAX_HP;
-        this.currentHP = currentHP;
+    public HP(double max_HP, double currentHP) {
+        this.max_HP = max_HP;
+        this.current_HP = currentHP;
     }
 
     public HP() {
     }
 
-    public double getMAX_HP() {
-        return MAX_HP;
+    public double getMax_HP() {
+        return max_HP;
     }
 
     public double getCurrentHP() {
-        return currentHP;
+        return current_HP;
     }
 
     public void setCurrentHP(double currentHP) {
-        this.currentHP = currentHP;
+        this.current_HP = currentHP;
     }
 }
