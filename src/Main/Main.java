@@ -1,5 +1,6 @@
 package Main;
-import java.com
+import Component.PanelGame;
+
 
 public class Main {
 }
