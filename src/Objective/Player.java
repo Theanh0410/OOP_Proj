@@ -59,5 +59,10 @@ public class Player extends HPRender{
         g2.setTransform(oldTransform);
     }
 
-
+    public Area getShape() {
+        AffineTransform afx = new AffineTransform();
+        afx.translate(x, y);
+        afx.rotate(Math.toRadians(angle), player_Size / 2, player_Size / 2);
+        return new Area(afx.createTransformedShape(playerShape));
+    }
 }
