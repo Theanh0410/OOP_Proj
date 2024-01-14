@@ -321,7 +321,7 @@ public class GamePanel extends JComponent {
             }
         }
         g2.setColor(Color.WHITE);
-        g2.setFont(getFont().deriveFont(Font.BOLD, 15f));
+        g2.setFont(getFont().deriveFont(Font.BOLD, 20f));
         g2.drawString("Score : " + score, 10, 20);
         if (!player.isAlive()) {
             String text = "GAME OVER";
@@ -335,7 +335,7 @@ public class GamePanel extends JComponent {
             double x = (width - textWidth) / 2;
             double y = (height - textHeight) / 2;
             g2.drawString(text, (int) x, (int) y + fm.getAscent());
-            g2.setFont(getFont().deriveFont(Font.BOLD, 15f));
+            g2.setFont(getFont().deriveFont(Font.BOLD, 30f));
             fm = g2.getFontMetrics();
             r2 = fm.getStringBounds(textKey, g2);
             textWidth = r2.getWidth();
@@ -343,6 +343,17 @@ public class GamePanel extends JComponent {
             x = (width - textWidth) / 2;
             y = (height - textHeight) / 2;
             g2.drawString(textKey, (int) x, (int) y + fm.getAscent() + 50);
+        } else if (score == 10) {
+            String text = "YOU WIN!!!";
+            rockets.clear();
+            g2.setFont(getFont().deriveFont(Font.BOLD, 50f));
+            FontMetrics fm = g2.getFontMetrics();
+            Rectangle2D r2 = fm.getStringBounds(text, g2);
+            double textWidth = r2.getWidth();
+            double textHeight = r2.getHeight();
+            double x = (width - textWidth) / 2;
+            double y = (height - textHeight) / 2;
+            g2.drawString(text, (int) x, (int) y + fm.getAscent());
         }
     }
 
@@ -352,11 +363,5 @@ public class GamePanel extends JComponent {
         g.dispose();
     }
 
-    private void sleep(long speed) {
-        try {
-            Thread.sleep(speed);
-        } catch (InterruptedException ex) {
-            System.err.println(ex);
-        }
-    }
+
 }
