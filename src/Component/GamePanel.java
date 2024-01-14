@@ -363,5 +363,11 @@ public class GamePanel extends JComponent {
         g.dispose();
     }
 
-
+    private void sleep(long speed) {
+        try {
+            Thread.sleep(speed);
+        } catch (InterruptedException ex) {
+            System.err.println(ex);
+        }
+    }
 }
