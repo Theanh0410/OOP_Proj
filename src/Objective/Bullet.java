@@ -43,4 +43,28 @@ public class Bullet {
         g2.fill(shape);
         g2.setTransform(oldTransform);
     }
+
+    public Shape getShape() {
+        return new Area(new Ellipse2D.Double(x, y, size, size));
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public double getSize() {
+        return size;
+    }
+
+    public double getCenterX() {
+        return x + size / 2;
+    }
+
+    public double getCenterY() {
+        return y + size / 2;
+    }
 }

@@ -8,6 +8,10 @@ public class HP {
         this.MAX_HP = MAX_HP;
         this.currentHP = currentHP;
     }
+
+    public HP() {
+    }
+
     public double getMAX_HP() {
         return MAX_HP;
     }
