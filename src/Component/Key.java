@@ -16,12 +16,12 @@ public class Key {
         this.key_enter = key_enter;
     }
 
-    public boolean isKey_space() {
+    public boolean isKey_accelerate() {
         return key_accelerate;
     }
 
-    public void setKey_accelerate(boolean key_space) {
-        this.key_accelerate = key_space;
+    public void setKey_accelerate(boolean key_accelerate) {
+        this.key_accelerate = key_accelerate;
     }
 
     public boolean isKey_right() {

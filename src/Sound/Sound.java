@@ -10,9 +10,9 @@ public class Sound {
     private final URL destroy;
 
     public Sound() {
-        this.shoot = this.getClass().getClassLoader().getResource("src/Sound/shoot.wav");
-        this.hit = this.getClass().getClassLoader().getResource("src/Sound/hit.wav");
-        this.destroy = this.getClass().getClassLoader().getResource("src/Sound/destroy.wav");
+        this.shoot = this.getClass().getClassLoader().getResource("Sound/shoot.wav");
+        this.hit = this.getClass().getClassLoader().getResource("Sound/hit.wav");
+        this.destroy = this.getClass().getClassLoader().getResource("Sound/destroy.wav");
     }
 
     public void soundShoot() {

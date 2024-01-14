@@ -54,7 +54,7 @@ public class Player extends HPRender{
     public void changeAngle(float angle) {
         if (angle < 0) {
             angle = 359;
-        } else if (angle < 359) {
+        } else if (angle > 359) {
             angle = 0;
         }
         this.angle = angle;
