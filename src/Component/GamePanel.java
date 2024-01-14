@@ -61,5 +61,10 @@ public class GamePanel extends JComponent {
         thread.start();
     }
 
-
+    private void addRocket() {
+        Random ran = new Random();
+        int locaY = ran.nextInt(height - 50) + 25;
+        Rocket rocket = new Rocket();
+        rocket.c
+    }
 }
