@@ -1,5 +1,5 @@
 package Main;
-import Component.PanelGame;
+import Component.GamePanel;
 
 
 public class Main {
