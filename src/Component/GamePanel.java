@@ -181,6 +181,12 @@ public class GamePanel extends JComponent {
                         }
                     }
 
+                    if (player.isAlive() && score == 10) {
+                        if (key.isKey_enter()) {
+                            resetGame();
+                        }
+                    }
+
                     for (int i = 0; i < rockets.size(); i++) {
                         Rocket rocket = rockets.get(i);
                         if (rocket != null) {
@@ -346,6 +352,7 @@ public class GamePanel extends JComponent {
         } else if (score == 10) {
             String text = "YOU WIN!!!";
             rockets.clear();
+            String textKey = "Press key enter to Play again ...";
             g2.setFont(getFont().deriveFont(Font.BOLD, 50f));
             FontMetrics fm = g2.getFontMetrics();
             Rectangle2D r2 = fm.getStringBounds(text, g2);
@@ -354,6 +361,14 @@ public class GamePanel extends JComponent {
             double x = (width - textWidth) / 2;
             double y = (height - textHeight) / 2;
             g2.drawString(text, (int) x, (int) y + fm.getAscent());
+            g2.setFont(getFont().deriveFont(Font.BOLD, 30f));
+            fm = g2.getFontMetrics();
+            r2 = fm.getStringBounds(textKey, g2);
+            textWidth = r2.getWidth();
+            textHeight = r2.getHeight();
+            x = (width - textWidth) / 2;
+            y = (height - textHeight) / 2;
+            g2.drawString(textKey, (int) x, (int) y + fm.getAscent() + 50);
         }
     }
 
