@@ -301,6 +301,7 @@ public class GamePanel extends JComponent {
 
     private void drawBackground() {
         g2.setColor(new Color(30, 30, 30));
+        g2.drawRect(0, 0, width, height);
         g2.fillRect(0, 0, width, height);
     }
 
