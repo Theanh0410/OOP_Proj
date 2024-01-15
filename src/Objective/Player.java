@@ -8,7 +8,7 @@ public class Player extends HPRender{
     public static final double player_Size = 64;
     private double x;
     private double y;
-    private final float MAX_SPEED = 1f;
+    private final float MAX_SPEED = 0.7f;
     private float speed = 0f;
     private float angle = 0f;
     private final Area playerShape;
